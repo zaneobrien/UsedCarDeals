@@ -1,0 +1,6 @@
+[submodule "python-craigslist"]
+	path = python-craigslist
+	url = https://github.com/juliomalegria/python-craigslist.git
+[submodule "python-edmunds"]
+	path = python-edmunds
+	url = https://github.com/EdmundsAPI/sdk-python.git
