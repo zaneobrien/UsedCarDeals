@@ -20,9 +20,9 @@ This program compares prices from Edmunds used car data with active listings on 
    ```
 
       Fill in information in UsedCarPrices.py
-```python
-Car = UsedCar('#make','#model','#year','#trim','#miles','#condition','#city','#zipcode')
-```
+   ```python
+   Car = UsedCar('#make','#model','#year','#trim','#miles','#condition','#city','#zipcode')
+   ```
 
 ### Running
 
