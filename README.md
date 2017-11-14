@@ -8,7 +8,7 @@ This program compares prices from Edmunds used car data with active listings on 
 
 1) Clone from github, making sure you use the --recursive flag in order to grab the sub modules
 
-      ``` git clone https://github.com/zaneobrien/UsedCarPrices.git --recursive ```
+      ``` git clone https://github.com/zaneobrien/UsedCarDeals.git --recursive ```
 
 2) Give Inputs
 
