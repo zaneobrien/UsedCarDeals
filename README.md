@@ -15,9 +15,9 @@ This program compares prices from Edmunds used car data with active listings on 
       Get and an API key at [Edmunds API](http://developer.edmunds.com/ "Here")
 
       Fill in API Key in UsedCarPrices.py
-```python
-api = Edmunds('#YOUR_KEY_HERE')
-```
+   ```python
+   api = Edmunds('#YOUR_KEY_HERE')
+   ```
 
       Fill in information in UsedCarPrices.py
 ```python
