@@ -2,6 +2,8 @@
 
 Searching for a new car? use this!
 
+This program compares prices from Edmunds used car data with active listings on Craigslist in order to find great deals on Craigslist.
+
 ### Prep
 
 1) Clone from github, making sure you use the --recursive flag in order to grab the sub modules
@@ -24,6 +26,6 @@ Car = UsedCar('#make','#model','#year','#trim','#miles','#condition','#city','#z
 
 ### Running
 
-Will work with python 2 or 3
+This will work with python 2 or 3
 
 ``` python UsedCarPrices.py```
