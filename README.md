@@ -8,13 +8,13 @@ This program compares prices from Edmunds used car data with active listings on 
 
 1) Clone from github, making sure you use the --recursive flag in order to grab the sub modules
 
-``` git clone https://github.com/zaneobrien/UsedCarPrices.git --recursive ```
+      ``` git clone https://github.com/zaneobrien/UsedCarPrices.git --recursive ```
 
 2) Give Inputs
 
-Get and API key at [Edmunds API](http://developer.edmunds.com/ "Here")
+      Get and API key at [Edmunds API](http://developer.edmunds.com/ "Here")
 
-Fill in API Key in UsedCarPrices.py
+      Fill in API Key in UsedCarPrices.py
 ```python
 api = Edmunds('#YOUR_KEY_HERE')
 ```
