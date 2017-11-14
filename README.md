@@ -20,9 +20,9 @@ api = Edmunds('#YOUR_KEY_HERE')
 ```
 
       Fill in information in UsedCarPrices.py
-            ```python
-            Car = UsedCar('#make','#model','#year','#trim','#miles','#condition','#city','#zipcode')
-            ```
+```python
+Car = UsedCar('#make','#model','#year','#trim','#miles','#condition','#city','#zipcode')
+```
 
 ### Running
 
