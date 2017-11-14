@@ -1,6 +1,6 @@
 # UsedCarPrices
 
-Searching for a new car? use this!
+Searching for a used car? use this!
 
 This program compares prices from Edmunds used car data with active listings on Craigslist in order to find great deals on Craigslist.
 
