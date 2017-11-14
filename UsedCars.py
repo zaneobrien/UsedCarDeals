@@ -7,15 +7,13 @@ class UsedCar(object):
     def EdmundCall(self):
         """Makes an API call to Edmunds and puts response from json into a dictionary"""
         # get styleID by the make model and year of car
-        # use Edmunds('YOUR API KEY', True) for debug mode
-        api = Edmunds('8tx5sraszgugftzfu2rtdpbw')
+        api = Edmunds('#YOUR_KEY_HERE')
         styleIDResponse = api.make_call('/api/vehicle/v2/'+self.make+'/'+self.model+'/'+self.year+'/styles')
         styleIDJson = json.dumps(styleIDResponse)
         styleIDDict = json.loads(styleIDJson)
         # extract the correct styleID for the corresponding make,model,year
         for i in styleIDDict['styles']:
             if self.trim == i['trim']:
-                #assignes the first ID that it finds in the json...not ideal
                 self.id = i['id']
                 break
 
@@ -30,7 +28,7 @@ class UsedCar(object):
         """Uses CraigsList scraper to search deals in the area and gets price"""
         CraigslistCar = CraigslistForSale(category='cta', site=self.city,filters={'query':self.year +' '+ self.make +' '+ self.model +' '+ self.trim})
         print 'Searching Craigslist: ' + self.year +' '+ self.make +' '+ self.model + ' '+ self.trim
-        for result in CraigslistCar.get_results(limit=10):
+        for result in CraigslistCar.get_results(limit=5):
             #take off '$'
             dollarPrice = result["price"]
             actualprice = float(dollarPrice[1:])
@@ -55,6 +53,6 @@ class UsedCar(object):
         self.city = city
         self.zipcode = zipcode
 
-Car = UsedCar('ford','f150','2011','XLT','100000','Outstanding','sandiego','92024')
+Car = UsedCar('#make','#model','#year','#trim','#miles','#condition','#city','#zipcode')
 Car.EdmundCall()
 Car.CraigslistCompare()
