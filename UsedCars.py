@@ -11,7 +11,7 @@ class UsedCar(object):
         styleIDResponse = api.make_call('/api/vehicle/v2/'+self.make+'/'+self.model+'/'+self.year+'/styles')
         styleIDJson = json.dumps(styleIDResponse)
         styleIDDict = json.loads(styleIDJson)
-        # extract the correct styleID for the corresponding make,model,year
+        # extract the a styleID for the corresponding make,model,year
         for i in styleIDDict['styles']:
             if self.trim == i['trim']:
                 self.id = i['id']
