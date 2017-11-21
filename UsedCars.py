@@ -7,7 +7,7 @@ class UsedCar(object):
     def EdmundCall(self):
         """Makes an API call to Edmunds and puts response from json into a dictionary"""
         # get styleID by the make model and year of car
-        api = Edmunds('#YOUR_KEY_HERE')
+        api = Edmunds('#YOUR KEY HERE')
         styleIDResponse = api.make_call('/api/vehicle/v2/'+self.make+'/'+self.model+'/'+self.year+'/styles')
         styleIDJson = json.dumps(styleIDResponse)
         styleIDDict = json.loads(styleIDJson)
@@ -25,9 +25,23 @@ class UsedCar(object):
         print (carPriceDict["tmv"]["totalWithOptions"]["usedPrivateParty"])
 
     def CraigslistCompare(self):
-        """Uses CraigsList scraper to search deals in the area and gets price"""
-        CraigslistCar = CraigslistForSale(category='cta', site=self.city,filters={'query':self.year +' '+ self.make +' '+ self.model +' '+ self.trim})
-        print 'Searching Craigslist: ' + self.year +' '+ self.make +' '+ self.model + ' '+ self.trim
+        """Uses CraigsList scraper to search cars in the area and gets price"""
+        minMiles = .8*float(self.mileage)
+        maxMiles = 1.2*float(self.mileage)
+        CraigslistCar = CraigslistForSale(category='cta',
+                                          site=self.city,
+                                          filters={'query':self.year +' '
+                                                         + self.make +' '
+                                                         + self.model +' '
+                                                         + self.trim,
+                                                   'min_miles':minMiles,
+                                                   'max_miles':maxMiles})
+        print ('Searching Craigslist: ' + self.year +' '
+                                       + self.make +' '
+                                       + self.model + ' '
+                                       + self.trim + ' with between '
+                                       + str(minMiles) + ' and '
+                                       + str(maxMiles) + ' miles')
         for result in CraigslistCar.get_results(limit=5):
             #take off '$'
             dollarPrice = result["price"]
@@ -53,6 +67,6 @@ class UsedCar(object):
         self.city = city
         self.zipcode = zipcode
 
-Car = UsedCar('#make','#model','#year','#trim','#miles','#condition','#city','#zipcode')
+Car = UsedCar('#make','#model','#year','#trim','#milage','#condition','#city','#zipcode')
 Car.EdmundCall()
 Car.CraigslistCompare()
