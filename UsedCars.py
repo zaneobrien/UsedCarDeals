@@ -1,5 +1,6 @@
 from edmunds import Edmunds
 from craigslist import CraigslistForSale
+from secrets import api_key
 import json
 
 
@@ -7,7 +8,7 @@ class UsedCar(object):
     def EdmundCall(self):
         """Makes an API call to Edmunds and puts response from json into a dictionary"""
         # get styleID by the make model and year of car
-        api = Edmunds('#YOUR KEY HERE')
+        api = Edmunds('api_key')
         styleIDResponse = api.make_call('/api/vehicle/v2/'+self.make+'/'+self.model+'/'+self.year+'/styles')
         styleIDJson = json.dumps(styleIDResponse)
         styleIDDict = json.loads(styleIDJson)
