@@ -13,7 +13,7 @@ This program compares prices from Edmunds used car data with active listings on 
 2) Give Inputs
 
       Get and an API key at [Edmunds API](http://developer.edmunds.com/ "Here")
-      Edmonds is not stopping their public API access as of Feb 2017
+      ***Edmonds is not stopping their public API access as of Feb 2017
 
       Fill in API Key in secrets.py
    ```python
